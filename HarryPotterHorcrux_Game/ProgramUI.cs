@@ -86,23 +86,56 @@ namespace HarryPotter_Game
         {
             Room currentRoom = dormitory;
 
-            Console.WriteLine("HARRY POTTER and the SEARCH FOR DEATHLY HALLOWS");
 
-            Thread.Sleep(1200);
+            string title = @"                                         _ __
+        ___                             | '  \
+   ___  \ /  ___         ,'\_           | .-. \        /|
+   \ /  | |,'__ \  ,'\_  |   \          | | | |      ,' |_   /|
+ _ | |  | |\/  \ \ |   \ | |\_|    _    | |_| |   _ '-. .-',' |_   _
+// | |  | |____| | | |\_|| |__    //    |     | ,'_`. | | '-. .-',' `. ,'\_
+\\_| |_,' .-, _  | | |   | |\ \  //    .| |\_/ | / \ || |   | | / |\  \|   \
+ `-. .-'| |/ / | | | |   | | \ \//     |  |    | | | || |   | | | |_\ || |\_|
+   | |  | || \_| | | |   /_\  \ /      | |`    | | | || |   | | | .---'| |
+   | |  | |\___,_\ /_\ _      //       | |     | \_/ || |   | | | |  /\| |
+   /_\  | |           //_____//       .||`      `._,' | |   | | \ `-' /| |
+        /_\           `------'        \ |   AND        `.\  | |  `._,' /_\
+                                       \|       THE          `.\
+                                            SEARCH FOR THE                                
+                     ___           _   _    _        _  _      _ _               
+                    |   \ ___ __ _| |_| |_ | |_  _  | || |__ _| | |_____ __ _____
+                    | |) / -_) _` |  _| ' \| | || | | __ / _` | | / _ \ V  V (_-<
+                    |___/\___\__,_|\__|_||_|_|\_, | |_||_\__,_|_|_\___/\_/\_//__/
+                                              |__/     ";                          
+
+
+
+            Console.WriteLine(title);
+
+            Thread.Sleep(1000);
+
+            Console.WriteLine("\n\nPress any key to continue");
+            Console.ReadKey();
+
+            Console.Clear();
 
             Console.WriteLine("You wake up in your dormitory to sounds of screams in the castle, \n" +
                 "and something small tugging at the hem of your robes...");
 
-            Thread.Sleep(1000);
+            Thread.Sleep(2500);
 
             Console.WriteLine("\nDOBBY: Harry Potter, sir, your friends need your help!\n" +
-                "       Take your invisibility cloak.\n" +
+                "       Take your *Invisibility Cloak*.\n" +
                 "       You must gather the remaining two DEATHLY HALLOWS from the castle\n" +
-                "       before you can defeat He-Who-Must-Not-Be-Named!");
+                "       before you can defeat He-Who-Must-Not-Be-Named!\n\n");
 
-            Thread.Sleep(1250);
+            Thread.Sleep(1000);
 
-            Console.WriteLine("\n\nHOW TO PLAY:\n" +
+            Console.WriteLine("Press any key to continue");
+            Console.ReadKey();
+
+            Console.Clear();
+
+            Console.WriteLine("HOW TO PLAY:\n\n" +
                 "Type your desired destination from the list of possible exits to move about the castle\n" +
                 "Collect the remaining DEATHLY HALLOWS to battle Voldemort\n" +
                 "Type \"inventory\" at any time to access INVENTORY\n\n\n" +
@@ -136,7 +169,7 @@ namespace HarryPotter_Game
                     {
                         Console.WriteLine("- " + hallow);
                     }
-                    Console.WriteLine("\nPress any key to continue");
+                    Console.WriteLine("\nPress any key to continue\n");
                     Console.ReadKey();
                 }
                 else
@@ -148,6 +181,8 @@ namespace HarryPotter_Game
                             Console.WriteLine("\nI can't go to the Forbidden Forest yet.\n" +
                                 "I'll need all three Deathly Hallows to defeat Lord Voldemort.");
                             Console.ReadKey();
+                            canExit = true;
+                            break;
                         }
 
 
@@ -180,7 +215,7 @@ namespace HarryPotter_Game
                     }
                     if (!canExit)
                     {
-                        Console.WriteLine("\nI can't go there.");
+                        Console.WriteLine("\nI can't go there.\n");
                         Thread.Sleep(250);
                     }
                 }
@@ -196,11 +231,11 @@ namespace HarryPotter_Game
             Console.WriteLine("Press any key to begin battle...\n");
             Console.ReadKey();
 
-            bool alive = true;
-            while (alive)
+            bool inBattle = true;
+            while (inBattle)
             {
-                int Harry;
-                int Voldemort;
+                int harryRoll;
+                int voldyRoll;
 
                 int harryPoints = 0;
                 int voldyPoints = 0;
@@ -214,22 +249,22 @@ namespace HarryPotter_Game
 
                     Console.ReadKey();
 
-                    Harry = randy.Next(1, 7);
-                    Voldemort = randy.Next(1, 7);
+                    harryRoll = randy.Next(1, 7);
+                    voldyRoll = randy.Next(1, 7);
 
 
                     Thread.Sleep(1000);
 
-                    if (Harry > Voldemort)
+                    if (harryRoll > voldyRoll)
                     {
                         harryPoints++;
                         Console.WriteLine("You hit Voldemort with Expelliarmus!");
 
                     }
-                    else if (Harry < Voldemort)
+                    else if (harryRoll < voldyRoll)
                     {
                         voldyPoints++;
-                        Console.WriteLine("Voldemort attacks swiftly with Crucio");
+                        Console.WriteLine("Voldemort attacks swiftly with Crucio!");
                     }
                     else
                     {
@@ -247,7 +282,8 @@ namespace HarryPotter_Game
                 }
                 else if (harryPoints < voldyPoints)
                 {
-                    Console.WriteLine("Voldemort has won...");
+                    Console.WriteLine("Voldemort has won...\n" +
+                        "The entire wizarding world now falls into chaos...\n");
                 }
                 else
                 {
@@ -257,7 +293,7 @@ namespace HarryPotter_Game
                         "You shall one day duel again...\n");
                 }
                 Console.ReadKey();
-                alive = false;
+                inBattle = false;
             }
         }
     }
