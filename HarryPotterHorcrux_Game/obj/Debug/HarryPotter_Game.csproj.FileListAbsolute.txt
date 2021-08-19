@@ -1,0 +1,7 @@
+C:\ElevenFiftyProjects\Assignments\HarryPotterHorcrux_Game\HarryPotterHorcrux_Game\bin\Debug\HarryPotterHorcrux_Game.exe.config
+C:\ElevenFiftyProjects\Assignments\HarryPotterHorcrux_Game\HarryPotterHorcrux_Game\bin\Debug\HarryPotterHorcrux_Game.exe
+C:\ElevenFiftyProjects\Assignments\HarryPotterHorcrux_Game\HarryPotterHorcrux_Game\bin\Debug\HarryPotterHorcrux_Game.pdb
+C:\ElevenFiftyProjects\Assignments\HarryPotterHorcrux_Game\HarryPotterHorcrux_Game\obj\Debug\HarryPotter_Game.csproj.AssemblyReference.cache
+C:\ElevenFiftyProjects\Assignments\HarryPotterHorcrux_Game\HarryPotterHorcrux_Game\obj\Debug\HarryPotter_Game.csproj.CoreCompileInputs.cache
+C:\ElevenFiftyProjects\Assignments\HarryPotterHorcrux_Game\HarryPotterHorcrux_Game\obj\Debug\HarryPotterHorcrux_Game.exe
+C:\ElevenFiftyProjects\Assignments\HarryPotterHorcrux_Game\HarryPotterHorcrux_Game\obj\Debug\HarryPotterHorcrux_Game.pdb
