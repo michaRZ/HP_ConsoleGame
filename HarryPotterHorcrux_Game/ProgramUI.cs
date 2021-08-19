@@ -11,7 +11,7 @@ namespace HarryPotter_Game
 
     public class ProgramUI
     {
-        // Consider implemeting a timer when games starts to collect all items, otherwise you LOSE
+        // Consider implementing a timer when games starts to collect all items
 
         public List<DeathlyHallow> collectedHallows = new List<DeathlyHallow>();
 
@@ -38,14 +38,14 @@ namespace HarryPotter_Game
         // GREAT HALL: Exit: GROUNDS or DUNGEON
         public static Room greatHall = new Room("\n\n\nThe Great Hall is filled with scared students \n" +
             "and franctic teachers. You must hurry!\n\n" +
-            "Obvious exits are GROUNDS and DUNGEON\n",
+            "Possible exits are GROUNDS and DUNGEON\n",
             new List<string> { "grounds", "dungeon" },
             new List<DeathlyHallow> { });
 
         // DUNGEON: Exit: GREAT HALL or POTIONS
         public static Room dungeon = new Room("\n\n\nThe dungeon is crawling with spineless Slytherins. They are no help.\n" +
             "You ignore them and keep looking for the Deathly Hallows.\n\n" +
-            "Obvious exits are GREAT HALL or POTIONS classroom.\n",
+            "Possible exits are GREAT HALL or POTIONS classroom.\n",
             new List<string> { "great hall", "potions" },
             new List<DeathlyHallow> { });
 
@@ -59,7 +59,7 @@ namespace HarryPotter_Game
         public static Room grounds = new Room("\n\n\nThe Grounds look like a war zone. Even the Whomping Willow gives a weary shudder.\n" +
             "You are surprised to see smoke puffing from the chimney \n" +
             "of Hagrid's hut down by the Forbidden Forest.\n\n" +
-            "Obvious exits are HAGRIDS or GREAT HALL\n",
+            "Possible exits are HAGRIDS or GREAT HALL\n",
             new List<string> { "great hall", "hagrids" },
             new List<DeathlyHallow> { });
 
@@ -67,7 +67,7 @@ namespace HarryPotter_Game
         public static Room hagrids = new Room("\n\n\nHagrid sits in the corner of his tiny hut, looking defeated.\n\n" +
             "HAGRID: Harry, You-Know-Who is hiding in the Forbidden Forest. \n" +
             "        Do you have all the DEATHLY HALLOWS?\n\n" +
-            "Obvious exits are GROUNDS or FORBIDDEN FOREST\n",
+            "Possible exits are GROUNDS or FORBIDDEN FOREST\n",
             new List<string> { "grounds", "forest" },
             new List<DeathlyHallow> { DeathlyHallow.ResurrectionStone });
 
@@ -121,14 +121,14 @@ namespace HarryPotter_Game
             Console.WriteLine("You wake up in your dormitory to sounds of screams in the castle, \n" +
                 "and something small tugging at the hem of your robes...");
 
-            Thread.Sleep(2500);
+            Thread.Sleep(1000);
 
             Console.WriteLine("\nDOBBY: Harry Potter, sir, your friends need your help!\n" +
                 "       Take your *Invisibility Cloak*.\n" +
                 "       You must gather the remaining two DEATHLY HALLOWS from the castle\n" +
                 "       before you can defeat He-Who-Must-Not-Be-Named!\n\n");
 
-            Thread.Sleep(1000);
+            Thread.Sleep(2000);
 
             Console.WriteLine("Press any key to continue");
             Console.ReadKey();
@@ -228,12 +228,14 @@ namespace HarryPotter_Game
             "...\n" +
             "VOLDEMORT appears!\n\n");
             Console.WriteLine("You must duel with Voldemort for five rounds!\n");
-            Console.WriteLine("Press any key to begin battle...\n");
+            Console.WriteLine("Press any key to begin battle...\n\n");
             Console.ReadKey();
+
 
             bool inBattle = true;
             while (inBattle)
             {
+
                 int harryRoll;
                 int voldyRoll;
 
@@ -245,7 +247,7 @@ namespace HarryPotter_Game
                 for (int i = 0; i < 5; i++)
                 {
 
-                    Console.WriteLine("Press any key to attack");
+                    Console.WriteLine("Press any key to attack\n");
 
                     Console.ReadKey();
 
@@ -264,7 +266,7 @@ namespace HarryPotter_Game
                     else if (harryRoll < voldyRoll)
                     {
                         voldyPoints++;
-                        Console.WriteLine("Voldemort attacks swiftly with Crucio!");
+                        Console.WriteLine("Voldemort moves faster and attacks with Crucio!");
                     }
                     else
                     {
